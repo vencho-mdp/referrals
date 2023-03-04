@@ -8,7 +8,7 @@
 const knex = {
   client: "pg",
   // @alert harcoded
-  connection: "postgres://postgres:null@localhost:5432/referrals",
+  connection: "postgres://postgres:postgres@localhost:5432/referrals",
 };
 
 module.exports = knex;
