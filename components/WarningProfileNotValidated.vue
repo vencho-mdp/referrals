@@ -28,7 +28,8 @@ const emit = defineEmits(["update:show"]);
     <span class="sr-only">Info</span>
     <div>
       <span class="underline font-semibold">Verify your profile</span>
-      To be able to get contacted by recruiters and get in touch with them
+      To be able to get contacted by recruiters or to see candidates and get in
+      touch with them
     </div>
   </div>
 </template>

@@ -9,7 +9,7 @@ const emit = defineEmits("clicked");
 </script>
 <template>
   <span
-    class="flex justify-start cursor-pointer items-center max-w-md w-full px-4 py-2 border border-blue-200 hover:shadow-xl transition duration-200 rounded-full"
+    class="flex justify-start cursor-pointer items-center max-w-md w-full px-4 py-2 shadow hover:shadow-lg transition duration-200 rounded-full"
     @click="emit('clicked')"
   >
     <img

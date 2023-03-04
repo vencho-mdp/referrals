@@ -45,10 +45,10 @@ export default NuxtAuthHandler({
   ],
   callbacks: {
     // Callback when the JWT is created / updated, see https://next-auth.js.org/configuration/callbacks#jwt-callback
-    async jwt({ token, account, profile, isNewUser }) {
+    async jwt({ token, account, user, profile, isNewUser }) {
       if (profile) {
-        const user = await db("users").where({ id: profile.id }).first();
-        if (!user) {
+        const userExists = await db("users").where({ id: profile.id }).first();
+        if (!userExists) {
           await db("users").insert([
             {
               id: profile.id,
@@ -57,7 +57,7 @@ export default NuxtAuthHandler({
               avatar_url:
                 profile.profilePicture?.["displayImage~"]?.elements?.[0]
                   ?.identifiers?.[0]?.identifier,
-              email: profile.email,
+              email: user.email,
             },
           ]);
         }

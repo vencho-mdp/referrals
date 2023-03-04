@@ -18,6 +18,7 @@ const title = !userData.value?.data?.wants_referral
   : "FAANG Employees";
 let showValidationForm = $ref(false);
 const validated = async () => {
+  console.log("New profile validated");
   showValidationForm = false;
   await refresh();
 };
