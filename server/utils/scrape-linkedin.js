@@ -114,7 +114,6 @@ export default async (url) => {
   const password = useRuntimeConfig().LINKEDIN_PASSWORD;
   // open browser
   const browser = await puppeteer.launch({
-    headless: false,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
